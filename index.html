@@ -1,46 +1,397 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gantasala Sai Roopesh - Portfolio</title>
-    <meta name="description" content="Portfolio of Gantasala Sai Roopesh, AI/ML Engineer" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: '#2563eb',
-              secondary: '#475569',
-              dark: '#0f172a',
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-          },
-        },
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gantasala Sai Roopesh | Portfolio</title>
+  <meta name="description" content="Portfolio of Gantasala Sai Roopesh, Technology Consultant and AI/ML Engineer." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #dbe3ee;
+      --accent: #0f766e;
+      --accent-soft: #ccfbf1;
+      --max: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 500px at 100% -10%, #e2e8f0 0%, transparent 65%),
+        radial-gradient(700px 400px at -10% 0%, #ecfeff 0%, transparent 60%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+      background: color-mix(in oklab, white 85%, transparent);
+    }
+
+    .top-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      padding: 4rem 0 2.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .kicker {
+      display: inline-block;
+      width: fit-content;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid #99f6e4;
+      background: var(--accent-soft);
+      color: #134e4a;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.7rem;
+      text-decoration: none;
+      padding: 0.6rem 0.95rem;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #fff;
+      font-weight: 500;
+      transition: transform 120ms ease, border-color 120ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: #94a3b8;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    main {
+      display: grid;
+      gap: 1rem;
+      padding-bottom: 2.5rem;
+    }
+
+    section {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 1rem;
+      padding: 1.25rem;
+    }
+
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.06rem;
+      line-height: 1.3;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .meta {
+      margin: 0.15rem 0 0.55rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .stack {
+      color: #0f172a;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin: 0.15rem 0 0.4rem;
+    }
+
+    .card + .card {
+      border-top: 1px dashed var(--line);
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+
+    ul {
+      margin: 0.3rem 0 0;
+      padding-left: 1rem;
+    }
+
+    li + li { margin-top: 0.35rem; }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .skill {
+      border: 1px solid var(--line);
+      border-radius: 0.8rem;
+      padding: 0.75rem;
+      background: #fbfdff;
+    }
+
+    .skill strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding: 0.8rem 0 2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .top-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
-  }
-}
-</script>
+
+      .hero { padding-top: 2.8rem; }
+    }
+  </style>
 </head>
-  <body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
-    <div id="root"></div>
-  </body>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#top">Gantasala Sai Roopesh</a>
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap" id="top">
+    <section class="hero">
+      <span class="kicker">Portfolio</span>
+      <h1>Technology Consultant building practical AI and automation systems.</h1>
+      <p class="lead">
+        AI/ML engineer with hands-on experience in SAP automation, DevOps, and production ML workflows.
+        I focus on reliable systems that reduce manual effort and improve operational visibility.
+      </p>
+      <div class="actions" id="contact">
+        <a class="btn primary" href="mailto:gantasala.roopesh@gmail.com">Email</a>
+        <a class="btn" href="tel:+918217270831">Call</a>
+        <a class="btn" href="https://www.linkedin.com/in/sai-roopesh" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/Sai-Roopesh" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://sairoopesh.pages.dev" target="_blank" rel="noreferrer">Website</a>
+        <a class="btn" href="./resumes/Sai_Roopesh_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </div>
+    </section>
+
+    <main>
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <article class="card">
+          <div class="row">
+            <h3>Technology Consultant, Hewlett Packard Enterprise (HPE)</h3>
+            <span>Aug 2025 - Present</span>
+          </div>
+          <p class="meta">Bengaluru, India</p>
+          <ul>
+            <li>Developing a Python automation framework for SAP Basis administration and data extraction from transactions like SM51.</li>
+            <li>Engineered an integrated reporting module using Selenium screenshot capture and ReportLab PDF generation.</li>
+            <li>Implemented real-time alerting via Python scripts and webhooks to deliver system health notifications.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <h3>Technology Consultant Intern, Hewlett Packard Enterprise (HPE)</h3>
+            <span>Feb 2025 - Aug 2025</span>
+          </div>
+          <p class="meta">Bengaluru, India</p>
+          <ul>
+            <li>Managed CI/CD pipelines with Jenkins, GitLab, SonarQube, and Nexus for bare-metal and VM deployments.</li>
+            <li>Architected and deployed HA SAP HANA on SUSE Linux cluster with disaster recovery protocols.</li>
+            <li>Built Prometheus and Grafana monitoring dashboards with webhook-driven incident alerts.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <article class="card">
+          <div class="row">
+            <h3>EduPersona: Personalised Learning System</h3>
+          </div>
+          <p class="stack">Python, GCP, Vertex AI, LangChain, Streamlit</p>
+          <ul>
+            <li>Built an AI-powered learning assistant on Streamlit and Google Cloud Platform for scalable performance.</li>
+            <li>Integrated Vertex AI and Gemini to generate quizzes and summaries from user-uploaded documents.</li>
+            <li>Used LangChain for document processing, embeddings, retrieval, and chat interaction.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <h3>Kidney Disease Classification</h3>
+          </div>
+          <p class="stack">Python, TensorFlow, MLflow, DVC, AWS, CI/CD</p>
+          <ul>
+            <li>Developed a TensorFlow/Keras model for early-stage kidney disease classification from medical images.</li>
+            <li>Implemented MLOps workflow using DVC for data versioning and MLflow for experiment tracking.</li>
+            <li>Set up GitHub Actions CI/CD and deployed model services on AWS EC2.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <h3>Better Prompt Generator</h3>
+          </div>
+          <p class="stack">JavaScript, Chrome Extension, Node.js, Azure AI</p>
+          <ul>
+            <li>Built a Manifest V3 Chrome extension to refine user prompts through LLM inference.</li>
+            <li>Created a Node.js/Express backend on Render with Azure AI Inference SDK integration.</li>
+            <li>Designed lightweight frontend UI with HTML and vanilla JavaScript.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+          <div class="skill">
+            <strong>Languages</strong>
+            Python, JavaScript, SQL, Java
+          </div>
+          <div class="skill">
+            <strong>AI/ML</strong>
+            TensorFlow, Keras, Scikit-learn, LangChain, Transformers, Vertex AI, Gemini, OpenAI API, Azure AI
+          </div>
+          <div class="skill">
+            <strong>Web & Backend</strong>
+            Node.js, Express, Flask, Streamlit, Chrome Extension APIs, HTML/CSS
+          </div>
+          <div class="skill">
+            <strong>MLOps & DevOps</strong>
+            MLflow, DVC, Jenkins, GitLab, GitHub Actions, CI/CD, SonarQube, Nexus, Docker, AWS, GCP
+          </div>
+          <div class="skill">
+            <strong>Databases & Tools</strong>
+            SAP HANA, SAP Basis, SUSE, MongoDB, SQLite, Git, Selenium, ReportLab, Prometheus, Grafana
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <article class="card">
+          <div class="row">
+            <h3>Dayananda Sagar Academy of Technology and Management</h3>
+            <span>May 2025</span>
+          </div>
+          <p class="meta">B.E in Artificial Intelligence and Machine Learning, Bengaluru, India</p>
+          <p class="meta">CGPA: 8.79/10</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Gantasala Sai Roopesh
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
