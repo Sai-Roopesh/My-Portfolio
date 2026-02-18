@@ -1,397 +1,374 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gantasala Sai Roopesh | Portfolio</title>
-  <meta name="description" content="Portfolio of Gantasala Sai Roopesh, Technology Consultant and AI/ML Engineer." />
-  <meta name="theme-color" content="#0b1220" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Roopesh's Cyber Portfolio</title>
+  <meta name="description" content="Gantasala Sai Roopesh portfolio website.">
   <style>
     :root {
-      --bg: #f8fafc;
-      --panel: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --line: #dbe3ee;
-      --accent: #0f766e;
-      --accent-soft: #ccfbf1;
-      --max: 960px;
+      --black: #000000;
+      --white: #ffffff;
+      --silver: #c0c0c0;
+      --gray: #808080;
+      --maroon: #800000;
+      --red: #ff0000;
+      --purple: #800080;
+      --fuchsia: #ff00ff;
+      --green: #008000;
+      --lime: #00ff00;
+      --olive: #808000;
+      --yellow: #ffff00;
+      --navy: #000080;
+      --blue: #0000ff;
+      --teal: #008080;
+      --aqua: #00ffff;
     }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1000px 500px at 100% -10%, #e2e8f0 0%, transparent 65%),
-        radial-gradient(700px 400px at -10% 0%, #ecfeff 0%, transparent 60%),
-        var(--bg);
-      line-height: 1.6;
+      padding: 0;
+      background: var(--navy);
+      background-image: radial-gradient(var(--aqua) 1px, transparent 1px);
+      background-size: 22px 22px;
+      color: var(--black);
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      line-height: 1.35;
     }
 
-    .wrap {
-      width: min(100% - 2rem, var(--max));
-      margin: 0 auto;
+    a {
+      color: var(--blue);
+      font-weight: bold;
     }
 
-    .top {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(8px);
-      background: color-mix(in oklab, white 85%, transparent);
+    a:visited {
+      color: var(--purple);
     }
 
-    .top-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 0;
-      gap: 1rem;
+    .page {
+      width: 90%;
+      max-width: 900px;
+      margin: 16px auto;
+      border: 4px ridge var(--silver);
+      background: var(--silver);
     }
 
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      color: var(--text);
-      white-space: nowrap;
+    .header {
+      background: var(--blue);
+      color: var(--yellow);
+      text-align: center;
+      padding: 12px 8px;
+      border-bottom: 3px solid var(--black);
+      text-shadow: 1px 1px 0 var(--black);
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    nav a:hover { color: var(--text); }
-
-    .hero {
-      padding: 4rem 0 2.5rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .kicker {
-      display: inline-block;
-      width: fit-content;
-      padding: 0.3rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid #99f6e4;
-      background: var(--accent-soft);
-      color: #134e4a;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    h1 {
+    .title {
       margin: 0;
-      font-size: clamp(2rem, 4.8vw, 3.8rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-size: 30px;
+      letter-spacing: 2px;
     }
 
-    .lead {
+    .subtitle {
+      margin: 6px 0 0;
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .marquee {
+      background: var(--black);
+      color: var(--lime);
+      border-top: 2px inset var(--gray);
+      border-bottom: 2px inset var(--gray);
+      padding: 4px 0;
+      font-weight: bold;
+    }
+
+    .construction-strip {
+      background: var(--yellow);
+      border-top: 2px solid var(--black);
+      border-bottom: 2px solid var(--black);
+      text-align: center;
+      padding: 2px 0;
+    }
+
+    .construction-strip img {
+      width: 96%;
+      max-width: 684px;
+      height: 37px;
       margin: 0;
-      max-width: 72ch;
-      color: var(--muted);
-      font-size: 1.05rem;
+      vertical-align: middle;
+      image-rendering: pixelated;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-top: 0.25rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0.7rem;
-      text-decoration: none;
-      padding: 0.6rem 0.95rem;
-      border: 1px solid var(--line);
-      color: var(--text);
-      background: #fff;
-      font-weight: 500;
-      transition: transform 120ms ease, border-color 120ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      border-color: #94a3b8;
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    main {
-      display: grid;
-      gap: 1rem;
-      padding-bottom: 2.5rem;
-    }
-
-    section {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 1rem;
-      padding: 1.25rem;
-    }
-
-    h2 {
-      margin: 0 0 0.75rem;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
-
-    h3 {
-      margin: 0;
-      font-size: 1.06rem;
-      line-height: 1.3;
-    }
-
-    .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .meta {
-      margin: 0.15rem 0 0.55rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .stack {
-      color: #0f172a;
-      font-weight: 500;
-      font-size: 0.95rem;
-      margin: 0.15rem 0 0.4rem;
-    }
-
-    .card + .card {
-      border-top: 1px dashed var(--line);
-      margin-top: 1rem;
-      padding-top: 1rem;
-    }
-
-    ul {
-      margin: 0.3rem 0 0;
-      padding-left: 1rem;
-    }
-
-    li + li { margin-top: 0.35rem; }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.85rem;
-    }
-
-    .skill {
-      border: 1px solid var(--line);
-      border-radius: 0.8rem;
-      padding: 0.75rem;
-      background: #fbfdff;
-    }
-
-    .skill strong {
-      display: block;
-      margin-bottom: 0.25rem;
-      font-size: 0.95rem;
-    }
-
-    footer {
-      padding: 0.8rem 0 2rem;
-      color: var(--muted);
-      font-size: 0.92rem;
+    .menu {
+      background: var(--gray);
+      border-bottom: 2px solid var(--black);
+      padding: 8px;
       text-align: center;
     }
 
-    @media (max-width: 700px) {
-      .top-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .menu a {
+      display: inline-block;
+      margin: 2px 4px;
+      padding: 4px 8px;
+      text-decoration: none;
+      border: 2px outset var(--white);
+      background: var(--silver);
+      color: var(--navy);
+    }
 
-      .hero { padding-top: 2.8rem; }
+    .menu a:hover {
+      border-style: inset;
+      background: var(--yellow);
+      color: var(--red);
+    }
+
+    .content {
+      padding: 10px;
+    }
+
+    .window {
+      margin: 10px 0;
+      border: 3px ridge var(--gray);
+      background: var(--white);
+    }
+
+    .window-title {
+      background: var(--teal);
+      color: var(--yellow);
+      padding: 4px 8px;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 2px solid var(--black);
+    }
+
+    .window-body {
+      padding: 10px;
+    }
+
+    .counter-image {
+      border: 2px inset var(--gray);
+      image-rendering: pixelated;
+      vertical-align: middle;
+    }
+
+    .badge {
+      display: inline-block;
+      margin: 4px;
+      padding: 4px 7px;
+      border: 2px outset var(--white);
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 12px;
+    }
+
+
+    .blink {
+      animation: blinker 1s steps(2, start) infinite;
+      color: var(--red);
+      font-weight: bold;
+    }
+
+    @keyframes blinker {
+      to {
+        visibility: hidden;
+      }
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 12px;
+      color: var(--black);
+      background: var(--gray);
+      border-top: 2px solid var(--black);
+    }
+
+    ul {
+      margin-top: 6px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    table.layout {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table.layout td {
+      vertical-align: top;
+      padding: 0;
+    }
+
+    .left-col {
+      width: 32%;
+    }
+
+    .right-col {
+      width: 68%;
+    }
+
+    @media (max-width: 760px) {
+      .left-col,
+      .right-col {
+        width: 100%;
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="top">
-    <div class="wrap top-inner">
-      <a class="brand" href="#top">Gantasala Sai Roopesh</a>
-      <nav>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <div class="page">
+    <div class="header" id="top">
+      <h1 class="title">GANTASALA SAI ROOPESH</h1>
+      <p class="subtitle">Technology Consultant | AI/ML Engineer | Bengaluru, India</p>
     </div>
-  </header>
 
-  <div class="wrap" id="top">
-    <section class="hero">
-      <span class="kicker">Portfolio</span>
-      <h1>Technology Consultant building practical AI and automation systems.</h1>
-      <p class="lead">
-        AI/ML engineer with hands-on experience in SAP automation, DevOps, and production ML workflows.
-        I focus on reliable systems that reduce manual effort and improve operational visibility.
-      </p>
-      <div class="actions" id="contact">
-        <a class="btn primary" href="mailto:gantasala.roopesh@gmail.com">Email</a>
-        <a class="btn" href="tel:+918217270831">Call</a>
-        <a class="btn" href="https://www.linkedin.com/in/sai-roopesh" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://github.com/Sai-Roopesh" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn" href="https://sairoopesh.pages.dev" target="_blank" rel="noreferrer">Website</a>
-        <a class="btn" href="./resumes/Sai_Roopesh_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-      </div>
-    </section>
+    <div class="marquee">
+      <marquee behavior="scroll" direction="left" scrollamount="6">pure html...but still loads faster than your 10mb react app</marquee>
+    </div>
 
-    <main>
-      <section id="experience">
-        <h2>Experience</h2>
+    <div class="construction-strip">
+      <img src="./assets/gifs/work_in_progress_animated.gif" alt="Work in progress">
+    </div>
 
-        <article class="card">
-          <div class="row">
-            <h3>Technology Consultant, Hewlett Packard Enterprise (HPE)</h3>
-            <span>Aug 2025 - Present</span>
-          </div>
-          <p class="meta">Bengaluru, India</p>
-          <ul>
-            <li>Developing a Python automation framework for SAP Basis administration and data extraction from transactions like SM51.</li>
-            <li>Engineered an integrated reporting module using Selenium screenshot capture and ReportLab PDF generation.</li>
-            <li>Implemented real-time alerting via Python scripts and webhooks to deliver system health notifications.</li>
-          </ul>
-        </article>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-        <article class="card">
-          <div class="row">
-            <h3>Technology Consultant Intern, Hewlett Packard Enterprise (HPE)</h3>
-            <span>Feb 2025 - Aug 2025</span>
-          </div>
-          <p class="meta">Bengaluru, India</p>
-          <ul>
-            <li>Managed CI/CD pipelines with Jenkins, GitLab, SonarQube, and Nexus for bare-metal and VM deployments.</li>
-            <li>Architected and deployed HA SAP HANA on SUSE Linux cluster with disaster recovery protocols.</li>
-            <li>Built Prometheus and Grafana monitoring dashboards with webhook-driven incident alerts.</li>
-          </ul>
-        </article>
-      </section>
+    <div class="content">
+      <table class="layout" border="0">
+        <tr>
+          <td class="left-col">
+            <div class="window" id="about">
+              <div class="window-title">[ About Me.exe ]</div>
+              <div class="window-body">
+                <p>
+                  I build practical AI, automation, and DevOps systems that reduce manual work and improve reliability.
+                </p>
+                <p class="blink">STATUS: OPEN TO COOL PROBLEMS</p>
+                <p>
+                  <span class="badge">Python</span>
+                  <span class="badge">AI/ML</span>
+                  <span class="badge">MLOps</span>
+                  <span class="badge">SAP</span>
+                </p>
+              </div>
+            </div>
 
-      <section id="projects">
-        <h2>Projects</h2>
+            <div class="window" id="contact">
+              <div class="window-title">[ Contact.bat ]</div>
+              <div class="window-body">
+                <p><b>Phone:</b><br><a href="tel:+918217270831">+91 8217270831</a></p>
+                <p><b>Email:</b><br><a href="mailto:gantasala.roopesh@gmail.com">gantasala.roopesh@gmail.com</a></p>
+                <p><b>LinkedIn:</b><br><a href="https://www.linkedin.com/in/sai-roopesh" target="_blank" rel="noreferrer">linkedin.com/in/sai-roopesh</a></p>
+                <p><b>GitHub:</b><br><a href="https://github.com/Sai-Roopesh" target="_blank" rel="noreferrer">github.com/Sai-Roopesh</a></p>
+                <p><b>Website:</b><br><a href="https://sairoopesh.pages.dev" target="_blank" rel="noreferrer">sairoopesh.pages.dev</a></p>
+                <p><b>Resume:</b><br><a href="./resumes/Sai_Roopesh_Resume.pdf" target="_blank" rel="noreferrer">Download PDF</a></p>
+              </div>
+            </div>
 
-        <article class="card">
-          <div class="row">
-            <h3>EduPersona: Personalised Learning System</h3>
-          </div>
-          <p class="stack">Python, GCP, Vertex AI, LangChain, Streamlit</p>
-          <ul>
-            <li>Built an AI-powered learning assistant on Streamlit and Google Cloud Platform for scalable performance.</li>
-            <li>Integrated Vertex AI and Gemini to generate quizzes and summaries from user-uploaded documents.</li>
-            <li>Used LangChain for document processing, embeddings, retrieval, and chat interaction.</li>
-          </ul>
-        </article>
+            <div class="window">
+              <div class="window-title">[ Visitor Counter ]</div>
+              <div class="window-body">
+                <img
+                  class="counter-image"
+                  src="https://komarev.com/ghpvc/?username=sai-roopesh-portfolio&label=VISITS&color=000000&style=flat-square"
+                  alt="Visitor counter"
+                >
+              </div>
+            </div>
+          </td>
 
-        <article class="card">
-          <div class="row">
-            <h3>Kidney Disease Classification</h3>
-          </div>
-          <p class="stack">Python, TensorFlow, MLflow, DVC, AWS, CI/CD</p>
-          <ul>
-            <li>Developed a TensorFlow/Keras model for early-stage kidney disease classification from medical images.</li>
-            <li>Implemented MLOps workflow using DVC for data versioning and MLflow for experiment tracking.</li>
-            <li>Set up GitHub Actions CI/CD and deployed model services on AWS EC2.</li>
-          </ul>
-        </article>
+          <td class="right-col">
+            <div class="window" id="experience">
+              <div class="window-title">[ Experience.log ]</div>
+              <div class="window-body">
+                <p><b>Technology Consultant - Hewlett Packard Enterprise (Aug 2025 - Present)</b></p>
+                <ul>
+                  <li>Developing a Python automation framework for SAP Basis admin tasks and transaction data extraction (e.g., SM51).</li>
+                  <li>Engineered reporting module with Selenium screenshots and ReportLab PDF generation.</li>
+                  <li>Implemented real-time alerting with Python scripts and webhooks for system health triggers.</li>
+                </ul>
 
-        <article class="card">
-          <div class="row">
-            <h3>Better Prompt Generator</h3>
-          </div>
-          <p class="stack">JavaScript, Chrome Extension, Node.js, Azure AI</p>
-          <ul>
-            <li>Built a Manifest V3 Chrome extension to refine user prompts through LLM inference.</li>
-            <li>Created a Node.js/Express backend on Render with Azure AI Inference SDK integration.</li>
-            <li>Designed lightweight frontend UI with HTML and vanilla JavaScript.</li>
-          </ul>
-        </article>
-      </section>
+                <p><b>Technology Consultant Intern - Hewlett Packard Enterprise (Feb 2025 - Aug 2025)</b></p>
+                <ul>
+                  <li>Managed CI/CD pipelines using Jenkins, GitLab, SonarQube, and Nexus across bare metal and VM infra.</li>
+                  <li>Architected HA SAP HANA on SUSE Linux cluster with disaster recovery configuration.</li>
+                  <li>Built monitoring dashboards with Prometheus and Grafana plus webhook incident alerts.</li>
+                </ul>
+              </div>
+            </div>
 
-      <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills">
-          <div class="skill">
-            <strong>Languages</strong>
-            Python, JavaScript, SQL, Java
-          </div>
-          <div class="skill">
-            <strong>AI/ML</strong>
-            TensorFlow, Keras, Scikit-learn, LangChain, Transformers, Vertex AI, Gemini, OpenAI API, Azure AI
-          </div>
-          <div class="skill">
-            <strong>Web & Backend</strong>
-            Node.js, Express, Flask, Streamlit, Chrome Extension APIs, HTML/CSS
-          </div>
-          <div class="skill">
-            <strong>MLOps & DevOps</strong>
-            MLflow, DVC, Jenkins, GitLab, GitHub Actions, CI/CD, SonarQube, Nexus, Docker, AWS, GCP
-          </div>
-          <div class="skill">
-            <strong>Databases & Tools</strong>
-            SAP HANA, SAP Basis, SUSE, MongoDB, SQLite, Git, Selenium, ReportLab, Prometheus, Grafana
-          </div>
-        </div>
-      </section>
+            <div class="window" id="projects">
+              <div class="window-title">[ Projects.zip ]</div>
+              <div class="window-body">
+                <p><b>EduPersona: Personalised Learning System</b> (Python, GCP, Vertex AI, LangChain, Streamlit)</p>
+                <ul>
+                  <li>Built AI-powered personal learning assistant with Streamlit on Google Cloud.</li>
+                  <li>Integrated Vertex AI and Gemini for quiz and summary generation from documents.</li>
+                  <li>Used LangChain for document processing, embeddings, retrieval, and chat interaction.</li>
+                </ul>
 
-      <section id="education">
-        <h2>Education</h2>
-        <article class="card">
-          <div class="row">
-            <h3>Dayananda Sagar Academy of Technology and Management</h3>
-            <span>May 2025</span>
-          </div>
-          <p class="meta">B.E in Artificial Intelligence and Machine Learning, Bengaluru, India</p>
-          <p class="meta">CGPA: 8.79/10</p>
-        </article>
-      </section>
-    </main>
+                <p><b>Kidney Disease Classification</b> (Python, TensorFlow, MLflow, DVC, AWS, CI/CD)</p>
+                <ul>
+                  <li>Developed TensorFlow/Keras model for early-stage kidney disease classification from medical imaging.</li>
+                  <li>Implemented MLOps workflow with DVC and MLflow for reproducible model lifecycle.</li>
+                  <li>Set up CI/CD with GitHub Actions and deployed on AWS EC2.</li>
+                </ul>
 
-    <footer>
+                <p><b>Better Prompt Generator</b> (JavaScript, Chrome Extension, Node.js, Azure AI)</p>
+                <ul>
+                  <li>Built Manifest V3 Chrome extension that improves prompts via LLM inference.</li>
+                  <li>Created Node.js/Express backend on Render with Azure AI Inference SDK integration.</li>
+                  <li>Built lightweight frontend using plain HTML and JavaScript.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="window" id="skills">
+              <div class="window-title">[ Skills.ini ]</div>
+              <div class="window-body">
+                <p><b>Languages:</b> Python, JavaScript, SQL, Java</p>
+                <p><b>AI/ML:</b> TensorFlow, Keras, Scikit-learn, LangChain, Transformers, Vertex AI, Gemini, OpenAI API, Azure AI</p>
+                <p><b>Web & Backend:</b> Node.js, Express, Flask, Streamlit, Chrome Extension APIs, HTML/CSS</p>
+                <p><b>MLOps & DevOps:</b> MLflow, DVC, Jenkins, GitLab, GitHub Actions, CI/CD, SonarQube, Nexus, Docker, AWS, GCP</p>
+                <p><b>Databases & Tools:</b> SAP HANA, SAP Basis, SUSE, MongoDB, SQLite, Git, Selenium, ReportLab, Prometheus, Grafana</p>
+              </div>
+            </div>
+
+            <div class="window" id="education">
+              <div class="window-title">[ Education.txt ]</div>
+              <div class="window-body">
+                <p><b>Dayananda Sagar Academy of Technology and Management</b><br>
+                  B.E in Artificial Intelligence and Machine Learning<br>
+                  Bengaluru, India | May 2025 | CGPA: 8.79/10
+                </p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="footer">
+      Built with pure HTML, CSS, and a tiny script.<br>
       © <span id="year"></span> Gantasala Sai Roopesh
-    </footer>
+    </div>
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    (function () {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
